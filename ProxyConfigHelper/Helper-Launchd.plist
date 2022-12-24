@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>AssociatedBundleIdentifiers</key>
-	<string>com.west2online.ClashX</string>
+	<string>io.jiyee.genx</string>
 	<key>Label</key>
-	<string>com.west2online.ClashX.ProxyConfigHelper</string>
+	<string>io.jiyee.GenX.GenXLauncher</string>
 	<key>MachServices</key>
 	<dict>
-		<key>com.west2online.ClashX.ProxyConfigHelper</key>
+		<key>io.jiyee.genx.GenXLauncher</key>
 		<true/>
 	</dict>
 </dict>

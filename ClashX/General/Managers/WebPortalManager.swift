@@ -10,7 +10,7 @@ import Cocoa
 
 class WebPortalManager {
     static let shared = WebPortalManager()
-    static let hasWebProtal = false
+    static let hasWebPortal = false
 
-    func addWebProtalMenuItem(_ menu: inout NSMenu) {}
+    func addWebPortalMenuItem(_ menu: inout NSMenu) {}
 }

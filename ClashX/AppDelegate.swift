@@ -199,7 +199,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItemView.updateViewStatus(enableProxy: ConfigManager.shared.proxyPortAutoSet)
 
         LaunchAtLogin.shared
-            .isEnableVirable
+            .isEnableVariable
             .asObservable()
             .subscribe(onNext: { [weak self] enable in
                 guard let self = self else { return }
@@ -487,8 +487,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ClashResourceManager.addUpdateMMDBMenuItem(&experimentalMenu)
         SystemProxyManager.shared.addDisableRestoreProxyMenuItem(&experimentalMenu)
         MenuItemFactory.addExperimentalMenuItem(&experimentalMenu)
-        if WebPortalManager.hasWebProtal {
-            WebPortalManager.shared.addWebProtalMenuItem(&statusMenu)
+        if WebPortalManager.hasWebPortal {
+            WebPortalManager.shared.addWebPortalMenuItem(&statusMenu)
         }
         AutoUpgardeManager.shared.setup()
         AutoUpgardeManager.shared.addChanelMenuItem(&experimentalMenu)
@@ -758,7 +758,7 @@ extension AppDelegate {
         alert.addButton(withTitle: NSLocalizedString("Cancel", comment: ""))
 
         if alert.runModal() == .alertFirstButtonReturn {
-            if textfiled.stringValue.isUrlVaild() {
+            if textfiled.stringValue.isUrlValid() {
                 ConfigManager.shared.benchMarkUrl = textfiled.stringValue
             } else {
                 let err = NSAlert()

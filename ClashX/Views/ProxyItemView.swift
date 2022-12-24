@@ -78,7 +78,7 @@ class ProxyItemView: MenuItemBaseView {
         case 0..<300:
             delayLabel.layer?.backgroundColor = CGColor.good
         default:
-            delayLabel.layer?.backgroundColor = CGColor.meduim
+            delayLabel.layer?.backgroundColor = CGColor.medium
         }
     }
 
@@ -116,6 +116,6 @@ class ProxyItemView: MenuItemBaseView {
 
 fileprivate extension CGColor {
     static let good = CGColor(red: 30.0 / 255, green: 181.0 / 255, blue: 30.0 / 255, alpha: 1)
-    static let meduim = CGColor(red: 1, green: 135.0 / 255, blue: 0, alpha: 1)
+    static let medium = CGColor(red: 1, green: 135.0 / 255, blue: 0, alpha: 1)
     static let fail = CGColor(red: 218.0 / 255, green: 0.0, blue: 3.0 / 255, alpha: 1)
 }

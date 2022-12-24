@@ -27,10 +27,10 @@ class RemoteConfigModel: Codable {
 
     func displayingTimeString() -> String {
         if updating { return NSLocalizedString("Updating", comment: "") }
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "MM-dd HH:mm"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd HH:mm"
         if let date = updateTime {
-            return dateFormater.string(from: date)
+            return dateFormatter.string(from: date)
         }
         return NSLocalizedString("Never", comment: "")
     }

@@ -52,7 +52,7 @@ class RemoteConfigManager {
             Logger.log("autoUpdateEnable did not enable,autoUpateTimer invalidated.")
             return
         }
-        Logger.log("set up autoUpateTimer")
+        Logger.log("set up autoUpdateTimer")
 
         refreshActivity = NSBackgroundActivityScheduler(identifier: "com.ClashX.configupdate")
         refreshActivity?.repeats = true

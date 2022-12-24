@@ -40,12 +40,12 @@ class AutoUpgardeManager: NSObject {
     // MARK: Public
 
     func setup() {
-        guard WebPortalManager.hasWebProtal == false, allowSelectChannel else { return }
+        guard WebPortalManager.hasWebPortal == false, allowSelectChannel else { return }
         SUUpdater.shared()?.delegate = self
     }
 
     func addChanelMenuItem(_ menu: inout NSMenu) {
-        guard WebPortalManager.hasWebProtal == false, allowSelectChannel else { return }
+        guard WebPortalManager.hasWebPortal == false, allowSelectChannel else { return }
         let upgradeMenu = NSMenu(title: NSLocalizedString("Upgrade Channel", comment: ""))
         for (_, item) in menuItems {
             upgradeMenu.addItem(item)

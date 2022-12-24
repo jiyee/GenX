@@ -28,7 +28,7 @@ class GeneralSettingViewController: NSViewController {
                 Settings.proxyIgnoreList = arr
             }.disposed(by: disposeBag)
 
-        LaunchAtLogin.shared.isEnableVirable
+        LaunchAtLogin.shared.isEnableVariable
             .map { $0 ? .on : .off }
             .bind(to: launchAtLoginButton.rx.state)
             .disposed(by: disposeBag)

@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func isUrlVaild() -> Bool {
+    func isUrlValid() -> Bool {
         guard count > 0 else { return false }
         guard let url = URL(string: self) else { return false }
 

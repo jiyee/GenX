@@ -1,6 +1,6 @@
 //
 //  ProxySettingTool.m
-//  com.west2online.ClashX.ProxyConfigHelper
+//  io.jiyee.GenX.GenXLauncher
 //
 //  Created by yichengchen on 2019/8/17.
 //  Copyright © 2019 west2online. All rights reserved.
@@ -207,7 +207,7 @@
 }
 
 - (void)applySCNetworkSettingWithRef:(void(^)(SCPreferencesRef))callback {
-    SCPreferencesRef ref = SCPreferencesCreateWithAuthorization(nil, CFSTR("com.west2online.ClashX.ProxyConfigHelper.config"), nil, self.authRef);
+    SCPreferencesRef ref = SCPreferencesCreateWithAuthorization(nil, CFSTR("io.jiyee.GenX.GenXLauncher.config"), nil, self.authRef);
     if (!ref) {
         return;
     }

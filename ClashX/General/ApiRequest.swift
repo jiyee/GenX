@@ -121,7 +121,7 @@ class ApiRequest {
     }
 
     static func requestConfigUpdate(configPath: String, callback: @escaping ((ErrorString?) -> Void)) {
-        let placeHolderErrorDesp = "Error occoured, Please try to fix it by restarting ClashX. "
+        let placeHolderErrorDesp = "Error occurred, Please try to fix it by restarting ClashX. "
 
         // DEV MODE: Use API
         if !useDirectApi() {

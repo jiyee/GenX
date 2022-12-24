@@ -226,7 +226,7 @@ class RemoteConfigAddView: NSView, NibLoadable {
     }
 
     func isVaild() -> Bool {
-        return urlTextField.stringValue.isUrlVaild() && getConfigName().0.count > 0
+        return urlTextField.stringValue.isUrlValid() && getConfigName().0.count > 0
     }
 
     func setUrl(string: String, name: String? = nil, defaultName: String?) {
@@ -246,7 +246,7 @@ class RemoteConfigAddView: NSView, NibLoadable {
     }
 
     private func updateConfigName() {
-        guard urlTextField.stringValue.isUrlVaild() else { return }
+        guard urlTextField.stringValue.isUrlValid() else { return }
         let urlString = urlTextField.stringValue
         configNameTextField.placeholderString = URL(string: urlString)?.host ?? "unknown"
     }

@@ -19,7 +19,7 @@ class PrivilegedHelperManager {
     private var authRef: AuthorizationRef?
     private var connection: NSXPCConnection?
     private var _helper: ProxyConfigRemoteProcessProtocol?
-    static let machServiceName = "com.west2online.ClashX.ProxyConfigHelper"
+    static let machServiceName = "io.jiyee.GenX.GenXLauncher"
 
     static let shared = PrivilegedHelperManager()
     init() {
@@ -106,7 +106,7 @@ class PrivilegedHelperManager {
                 AuthorizationFree(ref, [])
             }
         }
-        // Check if the authorization went succesfully
+        // Check if the authorization went successfully
         guard authStatus == errAuthorizationSuccess else {
             Logger.log("Couldn't obtain admin privileges: \(authStatus)", level: .error)
             return .getAdminFail

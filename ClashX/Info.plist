@@ -41,7 +41,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>Icon</string>
 			<key>CFBundleURLName</key>
-			<string>com.west2online.ClashX</string>
+			<string>io.jiyee.genx</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>clashx</string>
@@ -53,7 +53,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>Icon</string>
 			<key>CFBundleURLName</key>
-			<string>com.west2online.Clash</string>
+			<string>io.jiyee.gen</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>clash</string>
@@ -101,7 +101,7 @@
 	<false/>
 	<key>NSUbiquitousContainers</key>
 	<dict>
-		<key>iCloud.com.west2online.ClashX</key>
+		<key>io.jiyee.genx</key>
 		<dict>
 			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
 			<true/>
@@ -115,12 +115,12 @@
 	<string>ProxySetting.sdef</string>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier "com.west2online.ClashX" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: chen yicheng (96U846XGYH)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		<string>identifier &quot;io.jiyee.genx&quot; and anchor apple generic and certificate leaf[subject.CN] = &quot;Mac Developer: chen yicheng (96U846XGYH)&quot; and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 	</array>
 	<key>SMPrivilegedExecutables</key>
 	<dict>
-		<key>com.west2online.ClashX.ProxyConfigHelper</key>
-		<string>anchor apple generic and identifier "com.west2online.ClashX.ProxyConfigHelper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = MEWHFZ92DY)</string>
+		<key>io.jiyee.GenX.GenXLauncher</key>
+		<string>anchor apple generic and identifier &quot;io.jiyee.genx.GenXLauncher&quot; and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = MEWHFZ92DY)</string>
 	</dict>
 	<key>SUDisallowSelectChannel</key>
 	<false/>

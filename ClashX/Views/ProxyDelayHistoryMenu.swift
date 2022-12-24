@@ -32,20 +32,20 @@ class ProxyDelayHistoryMenu: NSMenu {
     }
 
     private func updateHistoryMenu(proxy: ClashProxy) {
-        let historys = Array(proxy.history.reversed())
-        let change = Changeset(previous: currentHistory, current: historys, identifier: { $0.time })
-        currentHistory = historys
+        let histories = Array(proxy.history.reversed())
+        let change = Changeset(previous: currentHistory, current: histories, identifier: { $0.time })
+        currentHistory = histories
         if change.moves.count == 0 && change.mutations.count == 0 {
             change.removals.reversed().forEach { idx in
                 removeItem(at: idx)
             }
             change.inserts.forEach { idx in
-                let his = historys[idx]
+                let his = histories[idx]
                 let item = NSMenuItem(title: his.displayString, action: nil, keyEquivalent: "")
                 insertItem(item, at: idx)
             }
         } else {
-            historys.map { his in
+            histories.map { his in
                 NSMenuItem(title: his.displayString, action: nil, keyEquivalent: "")
             }.forEach { item in
                 addItem(item)
