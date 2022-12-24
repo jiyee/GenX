@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var showNetSpeedIndicatorMenuItem: NSMenuItem!
     @IBOutlet var dashboardMenuItem: NSMenuItem!
     @IBOutlet var separatorLineTop: NSMenuItem!
-    @IBOutlet var sepatatorLineEndProxySelect: NSMenuItem!
+    @IBOutlet var sepratorLineEndProxySelect: NSMenuItem!
     @IBOutlet var configSeparatorLine: NSMenuItem!
     @IBOutlet var logLevelMenuItem: NSMenuItem!
     @IBOutlet var httpPortMenuItem: NSMenuItem!
@@ -109,7 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupData()
         runAfterConfigReload = { [weak self] in
             if !ConfigManager.builtInApiMode {
-                self?.selectAllowLanWithMenory()
+                self?.selectAllowLanWithMemory()
             }
         }
         updateConfig(showNotification: false)
@@ -363,8 +363,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func updateProxyList(withMenus menus: [NSMenuItem]) {
         let startIndex = statusMenu.items.firstIndex(of: separatorLineTop)! + 1
-        let endIndex = statusMenu.items.firstIndex(of: sepatatorLineEndProxySelect)!
-        sepatatorLineEndProxySelect.isHidden = menus.count == 0
+        let endIndex = statusMenu.items.firstIndex(of: sepratorLineEndProxySelect)!
+        sepratorLineEndProxySelect.isHidden = menus.count == 0
         for _ in 0..<endIndex - startIndex {
             statusMenu.removeItem(at: startIndex)
         }
@@ -475,7 +475,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     ConfigManager.selectConfigName = newConfigName
                 }
                 self.selectProxyGroupWithMemory()
-                self.selectOutBoundModeWithMenory()
+                self.selectOutBoundModeWithMemory()
                 MenuItemFactory.recreateProxyMenuItems()
                 NotificationCenter.default.post(name: .reloadDashboard, object: nil)
             }
@@ -850,7 +850,7 @@ extension AppDelegate {
         }
     }
 
-    func selectOutBoundModeWithMenory() {
+    func selectOutBoundModeWithMemory() {
         ApiRequest.updateOutBoundMode(mode: ConfigManager.selectOutBoundMode) {
             [weak self] _ in
             ConnectionManager.closeAllConnection()
@@ -858,7 +858,7 @@ extension AppDelegate {
         }
     }
 
-    func selectAllowLanWithMenory() {
+    func selectAllowLanWithMemory() {
         ApiRequest.updateAllowLan(allow: ConfigManager.allowConnectFromLan) {
             [weak self] in
             self?.syncConfig()

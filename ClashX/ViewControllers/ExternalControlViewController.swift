@@ -36,7 +36,7 @@ class ExternalControlViewController: NSViewController {
         alertView.accessoryView = addView
         let response = alertView.runModal()
         guard response == .alertFirstButtonReturn else { return }
-        guard addView.isVaild() else {
+        guard addView.isValid() else {
             let alert = NSAlert()
             alert.messageText = NSLocalizedString("Invalid input", comment: "")
             alert.alertStyle = .warning
@@ -141,7 +141,7 @@ class ExternalControlAddView: NSView {
         ])
     }
 
-    func isVaild() -> Bool {
+    func isValid() -> Bool {
         return urlTextField.stringValue.isUrlValid() && nameLabel.stringValue.count > 0
     }
 }

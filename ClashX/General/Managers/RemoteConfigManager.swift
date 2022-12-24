@@ -49,7 +49,7 @@ class RemoteConfigManager {
         refreshActivity?.invalidate()
         refreshActivity = nil
         guard RemoteConfigManager.autoUpdateEnable else {
-            Logger.log("autoUpdateEnable did not enable,autoUpateTimer invalidated.")
+            Logger.log("autoUpdateEnable did not enable,autoUpdateTimer invalidated.")
             return
         }
         Logger.log("set up autoUpdateTimer")
@@ -77,7 +77,7 @@ class RemoteConfigManager {
 
     @objc func autoUpdateCheck() {
         guard RemoteConfigManager.autoUpdateEnable else { return }
-        Logger.log("Tigger config auto update check")
+        Logger.log("Trigger config auto update check")
         updateCheck()
     }
 

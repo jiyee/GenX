@@ -41,18 +41,18 @@
 
 - (void)disableProxyWithfilterInterface:(BOOL)filterInterface {
     [self applySCNetworkSettingWithRef:^(SCPreferencesRef ref) {
-        [ProxySettingTool getDiviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
+        [ProxySettingTool getDeviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
             [self disableProxySetting:ref interface:key];
         }];
     }];
 }
 
-- (void)restoreProxySettint:(NSDictionary *)savedInfo
+- (void)restoreProxySetting:(NSDictionary *)savedInfo
                 currentPort:(int)port
            currentSocksPort:(int)socksPort
             filterInterface:(BOOL)filterInterface{
     [self applySCNetworkSettingWithRef:^(SCPreferencesRef ref) {
-        [ProxySettingTool getDiviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
+        [ProxySettingTool getDeviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
             NSDictionary *proxySetting = savedInfo[key];
             if (![proxySetting isKindOfClass:[NSDictionary class]]) {
                 proxySetting = nil;
@@ -95,7 +95,7 @@
 + (NSMutableDictionary<NSString *,NSDictionary *> *)currentProxySettings {
     __block NSMutableDictionary<NSString *,NSDictionary *> *info = [NSMutableDictionary dictionary];
     SCPreferencesRef ref = SCPreferencesCreate(nil, CFSTR("ClashX"), nil);
-    [ProxySettingTool getDiviceListWithPrefRef:ref filterInterface:YES devices:^(NSString *key, NSDictionary *dev) {
+    [ProxySettingTool getDeviceListWithPrefRef:ref filterInterface:YES devices:^(NSString *key, NSDictionary *dev) {
         NSDictionary *proxySettings = dev[(__bridge NSString *)kSCEntNetProxies];
         info[key] = [proxySettings copy];
     }];
@@ -190,7 +190,7 @@
                               (__bridge CFDictionaryRef)proxySettings);
 }
 
-+ (void)getDiviceListWithPrefRef:(SCPreferencesRef)ref
++ (void)getDeviceListWithPrefRef:(SCPreferencesRef)ref
                  filterInterface:(BOOL)filterInterface
                          devices:(void(^)(NSString *, NSDictionary *))callback {
     NSDictionary *sets = (__bridge NSDictionary *)SCPreferencesGetValue(ref, kSCPrefNetworkServices);

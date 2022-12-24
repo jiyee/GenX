@@ -99,8 +99,8 @@ class MenuItemFactory {
     static func updateProxyList(withMenus menus: [NSMenuItem]) {
         let app = AppDelegate.shared
         let startIndex = app.statusMenu.items.firstIndex(of: app.separatorLineTop)! + 1
-        let endIndex = app.statusMenu.items.firstIndex(of: app.sepatatorLineEndProxySelect)!
-        app.sepatatorLineEndProxySelect.isHidden = menus.count == 0
+        let endIndex = app.statusMenu.items.firstIndex(of: app.sepratorLineEndProxySelect)!
+        app.sepratorLineEndProxySelect.isHidden = menus.count == 0
         for _ in 0..<endIndex - startIndex {
             app.statusMenu.removeItem(at: startIndex)
         }

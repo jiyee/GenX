@@ -98,7 +98,7 @@ extension RemoteConfigViewController {
         let response = alertView.runModal()
 
         guard response == .alertFirstButtonReturn else { return }
-        guard remoteConfigInputView.isVaild() else {
+        guard remoteConfigInputView.isValid() else {
             let alert = NSAlert()
             alert.messageText = NSLocalizedString("Invalid input", comment: "")
             alert.alertStyle = .warning
@@ -225,7 +225,7 @@ class RemoteConfigAddView: NSView, NibLoadable {
         return (configNameTextField.placeholderString ?? "", false)
     }
 
-    func isVaild() -> Bool {
+    func isValid() -> Bool {
         return urlTextField.stringValue.isUrlValid() && getConfigName().0.count > 0
     }
 
