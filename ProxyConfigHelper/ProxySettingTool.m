@@ -33,7 +33,7 @@
                  ignoreList:(NSArray<NSString *>*)ignoreList {
 
     [self applySCNetworkSettingWithRef:^(SCPreferencesRef ref) {
-        [ProxySettingTool getDiviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
+        [ProxySettingTool getDeviceListWithPrefRef:ref filterInterface:filterInterface devices:^(NSString *key, NSDictionary *dict) {
             [self enableProxySettings:ref interface:key port:port socksPort:socksPort ignoreList:ignoreList pac:pacUrl];
         }];
     }];
